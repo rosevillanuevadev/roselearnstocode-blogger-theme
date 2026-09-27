@@ -4,7 +4,6 @@
 
 **Live site:** https://roselearnstocode.com (Blogger)
 **Repository:** https://github.com/rose2023va/roselearnstocode-blogger-theme
-**Built:** May 21 to 23, 2026 · **Documented:** September 27, 2026
 **Author:** Rose
 
 ---

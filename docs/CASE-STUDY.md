@@ -8,11 +8,11 @@
 
 A dark, terminal-inspired redesign of a purchased Blogger theme for a computer science study blog. The build adds math rendering (KaTeX), syntax-highlighted code (Prism.js), and diagrams (Mermaid.js), replaces the theme's navigation with a menu that builds its own Studies dropdown from post labels, restyles every list page into a one-line index, and adds five sidebar widgets. It shipped alongside a migration of the blog from paid WordPress hosting to free Blogger hosting.
 
-**Live:** roselearnstocode.com · **Code:** github.com/rose2023va/roselearnstocode-blogger-theme · **Role:** Solo · **Timeline:** May 2026
+**Live:** roselearnstocode.com · **Code:** github.com/rose2023va/roselearnstocode-blogger-theme · **Role:** Solo
 
 ## Project Scope (Problem)
 
-I was returning to a BSc in Computer Science after a two-year health-related break and wanted to keep a public study journal. The blog had three problems:
+I wanted a public study journal for computer science coursework. The blog had three problems:
 
 - **Cost.** It ran on paid WordPress hosting that I could not justify keeping long term.
 - **Content fit.** Discrete Mathematics notes need set notation and proofs, programming notes need readable code, and data structures need diagrams. The theme supported none of these.
