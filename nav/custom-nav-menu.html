@@ -1,0 +1,226 @@
+<!-- 
+  CUSTOM NAV MENU - Rose Learns to Code
+  =======================================
+  HOW TO INSTALL:
+  1. Blogger Dashboard → Theme → Edit HTML
+  2. Find this line:  <nav class='main-menu-wrapper'>
+  3. Replace the entire <nav>...</nav> block with this code
+  
+  OR add as HTML/JavaScript gadget in the header section via Layout.
+
+  EXCLUDE list: labels that won't appear in Studies dropdown.
+  To add more exclusions, add to the EXCLUDE array in the script.
+-->
+
+<style>
+#rlc-nav {
+  width: 100%;
+  background: #112240;
+  border-bottom: 1px solid #1d3557;
+  position: relative;
+  z-index: 200;
+}
+#rlc-nav-inner {
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  padding: 0;
+}
+#rlc-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+#rlc-nav-links > li {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+#rlc-nav-links > li > a,
+#rlc-nav-links > li > button {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: #a8b2d8;
+  text-decoration: none;
+  text-transform: lowercase;
+  padding: 0 1rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+#rlc-nav-links > li > a:hover,
+#rlc-nav-links > li > button:hover,
+#rlc-nav-links > li.active > a,
+#rlc-nav-links > li.active > button {
+  color: #FF6B6B;
+}
+/* Dropdown arrow */
+.rlc-arrow {
+  margin-left: 4px;
+  font-size: 0.6rem;
+  transition: transform 0.2s;
+  display: inline-block;
+}
+li.rlc-open .rlc-arrow {
+  transform: rotate(180deg);
+}
+/* Dropdown menu */
+.rlc-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #112240;
+  border: 1px solid #1d3557;
+  border-top: 2px solid #FF6B6B;
+  border-radius: 0 0 6px 6px;
+  min-width: 180px;
+  z-index: 300;
+  list-style: none;
+  margin: 0;
+  padding: 0.4rem 0;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+li.rlc-open .rlc-dropdown {
+  display: block;
+}
+.rlc-dropdown li a {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.72rem;
+  font-weight: 300;
+  color: #a8b2d8;
+  text-decoration: none;
+  display: block;
+  padding: 0.45rem 1rem;
+  transition: color 0.2s, background 0.2s;
+  white-space: nowrap;
+}
+.rlc-dropdown li a:hover {
+  color: #FF6B6B;
+  background: rgba(255,107,107,0.06);
+}
+.rlc-dropdown .rlc-loading-item {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.68rem;
+  color: #8892b0;
+  padding: 0.45rem 1rem;
+}
+/* Mobile */
+@media (max-width: 768px) {
+  #rlc-nav-inner {
+    padding: 0 1rem;
+  }
+  #rlc-nav-links > li > a,
+  #rlc-nav-links > li > button {
+    padding: 0 0.6rem;
+    font-size: 0.68rem;
+  }
+}
+</style>
+
+<nav id="rlc-nav">
+  <div id="rlc-nav-inner">
+    <ul id="rlc-nav-links">
+      <li><a href="/">home</a></li>
+      <li><a href="/search/label/Journal">journal</a></li>
+      <li id="rlc-studies-item">
+        <button onclick="rlcToggleStudies(event)">
+          studies <span class="rlc-arrow">▾</span>
+        </button>
+        <ul class="rlc-dropdown" id="rlc-studies-dropdown">
+          <li><span class="rlc-loading-item">// loading...</span></li>
+        </ul>
+      </li>
+      <li><a href="/p/about.html">about</a></li>
+    </ul>
+  </div>
+</nav>
+
+<script type="text/javascript">
+//<![CDATA[
+(function() {
+  // Labels to exclude from Studies dropdown
+  var EXCLUDE = ['Journal', 'Study Notes'];
+
+  var blogUrl = window.location.hostname;
+  var feedUrl = 'https://' + blogUrl +
+    '/feeds/posts/default?max-results=500&alt=json-in-script&callback=rlcNavLabels';
+
+  window.rlcNavLabels = function(data) {
+    var dropdown = document.getElementById('rlc-studies-dropdown');
+    if (!dropdown) return;
+
+    var entries = (data.feed && data.feed.entry) ? data.feed.entry : [];
+
+    // Collect all unique labels with their most recent post date
+    var labelDates = {};
+    for (var i = 0; i < entries.length; i++) {
+      var entry = entries[i];
+      if (!entry.category) continue;
+      var dateStr = entry.published ? entry.published.$t : '';
+      for (var j = 0; j < entry.category.length; j++) {
+        var name = entry.category[j].term;
+        if (EXCLUDE.indexOf(name) !== -1) continue;
+        if (!labelDates[name] || dateStr > labelDates[name]) {
+          labelDates[name] = dateStr;
+        }
+      }
+    }
+
+    // Sort by most recently used
+    var labels = Object.keys(labelDates);
+    labels.sort(function(a, b) {
+      return labelDates[b] > labelDates[a] ? 1 : -1;
+    });
+
+    if (labels.length === 0) {
+      dropdown.innerHTML = '<li><span class="rlc-loading-item">// no labels found</span></li>';
+      return;
+    }
+
+    var html = '';
+    for (var k = 0; k < labels.length; k++) {
+      var labelName = labels[k];
+      var labelUrl  = 'https://' + blogUrl + '/search/label/' + encodeURIComponent(labelName);
+      html += '<li><a href="' + labelUrl + '">' + labelName + '</a></li>';
+    }
+    dropdown.innerHTML = html;
+  };
+
+  // Load labels
+  var script = document.createElement('script');
+  script.src  = feedUrl;
+  script.type = 'text/javascript';
+  document.head.appendChild(script);
+})();
+
+// Toggle dropdown
+function rlcToggleStudies(e) {
+  e.stopPropagation();
+  var item = document.getElementById('rlc-studies-item');
+  item.classList.toggle('rlc-open');
+}
+
+// Close on outside click
+document.addEventListener('click', function() {
+  var item = document.getElementById('rlc-studies-item');
+  if (item) item.classList.remove('rlc-open');
+});
+//]]>
+</script>
+

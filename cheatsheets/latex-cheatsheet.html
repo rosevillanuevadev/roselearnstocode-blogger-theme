@@ -1,0 +1,166 @@
+<!-- 
+  LATEX CHEAT SHEET - Blogger Draft Post
+  =======================================
+  HOW TO USE:
+  1. Create a new post in Blogger
+  2. Switch to HTML view
+  3. Paste this entire file content
+  4. Save as DRAFT (do not publish)
+  5. Keep it open in a tab while writing math posts
+-->
+
+<style>
+body { font-family: 'Fira Code', monospace; background: #0a192f; color: #a8b2d8; padding: 2rem; }
+h2 { color: #FF6B6B; font-size: 1rem; letter-spacing: .15em; text-transform: uppercase; margin: 2rem 0 1rem; border-bottom: 1px solid #1d3557; padding-bottom: .5rem; }
+h3 { color: #e6f1ff; font-size: .9rem; margin: 1.5rem 0 .5rem; }
+table { width: 100%; border-collapse: collapse; margin-bottom: 1rem; }
+td { padding: .5rem .75rem; border-bottom: 1px solid #1d3557; font-size: .85rem; vertical-align: top; }
+td:first-child { color: #FF6B6B; width: 35%; }
+td:last-child { color: #8892b0; font-size: .78rem; }
+.note { background: #112240; border-left: 3px solid #FF6B6B; padding: .75rem 1rem; margin: 1rem 0; font-size: .83rem; border-radius: 0 4px 4px 0; }
+code { background: #112240; color: #FF6B6B; padding: .1em .4em; border-radius: 3px; font-size: .85em; }
+</style>
+
+<h1 style="font-family:'Fira Code',monospace; font-weight:300; font-size:1.4rem; color:#e6f1ff; text-transform:lowercase; letter-spacing:.05em; margin-bottom:.5rem;">// latex cheat sheet</h1>
+<p style="color:#8892b0; font-size:.83rem; margin-bottom:2rem;">Quick reference for writing math in Blogger posts. Wrap display math in <code>$$...$$</code> and inline math in <code>\(...\)</code></p>
+
+<div class="note">
+  <strong style="color:#e6f1ff;">Display math</strong> (centered, own line): <code>$$your equation here$$</code><br/>
+  <strong style="color:#e6f1ff;">Inline math</strong> (inside a sentence): <code>\(your equation here\)</code>
+</div>
+
+<!-- ===================== SETS ===================== -->
+<h2>Set Theory</h2>
+<table>
+  <tr><td><code>\in</code></td><td>∈ - element of</td><td>x \in A</td></tr>
+  <tr><td><code>\notin</code></td><td>∉ - not element of</td><td>x \notin A</td></tr>
+  <tr><td><code>\subset</code></td><td>⊂ - proper subset</td><td>A \subset B</td></tr>
+  <tr><td><code>\subseteq</code></td><td>⊆ - subset or equal</td><td>A \subseteq B</td></tr>
+  <tr><td><code>\supset</code></td><td>⊃ - proper superset</td><td>A \supset B</td></tr>
+  <tr><td><code>\cup</code></td><td>∪ - union</td><td>A \cup B</td></tr>
+  <tr><td><code>\cap</code></td><td>∩ - intersection</td><td>A \cap B</td></tr>
+  <tr><td><code>\setminus</code></td><td>∖ - set difference</td><td>A \setminus B</td></tr>
+  <tr><td><code>\emptyset</code></td><td>∅ - empty set</td><td>\emptyset</td></tr>
+  <tr><td><code>\mathcal{P}(A)</code></td><td>𝒫(A) - power set</td><td>\mathcal{P}(A)</td></tr>
+  <tr><td><code>|A|</code></td><td>cardinality</td><td>|A| = 5</td></tr>
+  <tr><td><code>\times</code></td><td>× - Cartesian product</td><td>A \times B</td></tr>
+</table>
+
+<h3>Set Builder Notation</h3>
+<div class="note">
+  <code>$$A = \{x \in \mathbb{Z} : 0 \leq x^3 &lt; 100\}$$</code>
+</div>
+
+<!-- ===================== NUMBER SETS ===================== -->
+<h2>Number Sets</h2>
+<table>
+  <tr><td><code>\mathbb{N}</code></td><td>ℕ - natural numbers</td><td></td></tr>
+  <tr><td><code>\mathbb{Z}</code></td><td>ℤ - integers</td><td></td></tr>
+  <tr><td><code>\mathbb{Q}</code></td><td>ℚ - rationals</td><td></td></tr>
+  <tr><td><code>\mathbb{R}</code></td><td>ℝ - reals</td><td></td></tr>
+  <tr><td><code>\mathbb{C}</code></td><td>ℂ - complex numbers</td><td></td></tr>
+  <tr><td><code>\mathbb{Z}^+</code></td><td>ℤ⁺ - positive integers</td><td></td></tr>
+</table>
+
+<!-- ===================== LOGIC ===================== -->
+<h2>Logic &amp; Propositional Calculus</h2>
+<table>
+  <tr><td><code>\land</code></td><td>∧ - and (conjunction)</td><td>p \land q</td></tr>
+  <tr><td><code>\lor</code></td><td>∨ - or (disjunction)</td><td>p \lor q</td></tr>
+  <tr><td><code>\lnot</code></td><td>¬ - not (negation)</td><td>\lnot p</td></tr>
+  <tr><td><code>\implies</code></td><td>⟹ - implies</td><td>p \implies q</td></tr>
+  <tr><td><code>\iff</code></td><td>⟺ - if and only if</td><td>p \iff q</td></tr>
+  <tr><td><code>\oplus</code></td><td>⊕ - exclusive or (XOR)</td><td>p \oplus q</td></tr>
+  <tr><td><code>\forall</code></td><td>∀ - for all</td><td>\forall x \in A</td></tr>
+  <tr><td><code>\exists</code></td><td>∃ - there exists</td><td>\exists x \in A</td></tr>
+  <tr><td><code>\nexists</code></td><td>∄ - there does not exist</td><td>\nexists x</td></tr>
+  <tr><td><code>\top</code></td><td>⊤ - tautology / true</td><td></td></tr>
+  <tr><td><code>\bot</code></td><td>⊥ - contradiction / false</td><td></td></tr>
+</table>
+
+<!-- ===================== RELATIONS ===================== -->
+<h2>Relations &amp; Ordering</h2>
+<table>
+  <tr><td><code>\leq</code></td><td>≤ - less than or equal</td><td>x \leq y</td></tr>
+  <tr><td><code>\geq</code></td><td>≥ - greater than or equal</td><td>x \geq y</td></tr>
+  <tr><td><code>\neq</code></td><td>≠ - not equal</td><td>x \neq y</td></tr>
+  <tr><td><code>\equiv</code></td><td>≡ - equivalent / congruent</td><td>a \equiv b \pmod{n}</td></tr>
+  <tr><td><code>\approx</code></td><td>≈ - approximately equal</td><td></td></tr>
+  <tr><td><code>\sim</code></td><td>∼ - similar / related</td><td>a \sim b</td></tr>
+  <tr><td><code>\mid</code></td><td>∣ - divides</td><td>a \mid b</td></tr>
+  <tr><td><code>\nmid</code></td><td>∤ - does not divide</td><td>a \nmid b</td></tr>
+</table>
+
+<!-- ===================== PROOF ===================== -->
+<h2>Proof &amp; Reasoning</h2>
+<table>
+  <tr><td><code>\therefore</code></td><td>∴ - therefore</td><td></td></tr>
+  <tr><td><code>\because</code></td><td>∵ - because</td><td></td></tr>
+  <tr><td><code>\square</code></td><td>□ - QED / end of proof</td><td></td></tr>
+  <tr><td><code>\blacksquare</code></td><td>■ - QED (filled)</td><td></td></tr>
+  <tr><td><code>\contradiction</code></td><td>↯ - contradiction</td><td></td></tr>
+</table>
+
+<!-- ===================== FUNCTIONS ===================== -->
+<h2>Functions &amp; Algebra</h2>
+<table>
+  <tr><td><code>\frac{a}{b}</code></td><td>fraction</td><td>\frac{x+1}{x-1}</td></tr>
+  <tr><td><code>\sqrt{x}</code></td><td>square root</td><td>\sqrt{x^2+y^2}</td></tr>
+  <tr><td><code>\sqrt[n]{x}</code></td><td>nth root</td><td>\sqrt[3]{8}</td></tr>
+  <tr><td><code>x^{n}</code></td><td>superscript / exponent</td><td>x^{n+1}</td></tr>
+  <tr><td><code>x_{n}</code></td><td>subscript</td><td>a_{n}</td></tr>
+  <tr><td><code>\lfloor x \rfloor</code></td><td>⌊x⌋ - floor</td><td></td></tr>
+  <tr><td><code>\lceil x \rceil</code></td><td>⌈x⌉ - ceiling</td><td></td></tr>
+  <tr><td><code>\bmod</code></td><td>mod operator</td><td>a \bmod n</td></tr>
+  <tr><td><code>\pmod{n}</code></td><td>modulo (in parens)</td><td>a \equiv b \pmod{n}</td></tr>
+</table>
+
+<!-- ===================== SUMMATION ===================== -->
+<h2>Summation &amp; Products</h2>
+<table>
+  <tr><td><code>\sum_{i=0}^{n}</code></td><td>summation</td><td>\sum_{i=1}^{n} i = \frac{n(n+1)}{2}</td></tr>
+  <tr><td><code>\prod_{i=0}^{n}</code></td><td>product</td><td>\prod_{i=1}^{n} i = n!</td></tr>
+  <tr><td><code>n!</code></td><td>factorial</td><td></td></tr>
+  <tr><td><code>\binom{n}{k}</code></td><td>binomial coefficient C(n,k)</td><td>\binom{n}{k} = \frac{n!}{k!(n-k)!}</td></tr>
+</table>
+
+<!-- ===================== MATRICES ===================== -->
+<h2>Matrices &amp; Vectors</h2>
+<div class="note">
+<strong style="color:#e6f1ff;">2×2 matrix:</strong><br/>
+<code>$$\begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix}$$</code><br/><br/>
+<strong style="color:#e6f1ff;">System of equations:</strong><br/>
+<code>$$\begin{cases} 2x + y = 5 \\ x - y = 1 \end{cases}$$</code>
+</div>
+
+<!-- ===================== SPACING ===================== -->
+<h2>Spacing (inside equations)</h2>
+<table>
+  <tr><td><code>\;</code></td><td>thick space</td><td></td></tr>
+  <tr><td><code>\,</code></td><td>thin space</td><td></td></tr>
+  <tr><td><code>\quad</code></td><td>large space</td><td></td></tr>
+  <tr><td><code>\qquad</code></td><td>extra large space</td><td></td></tr>
+  <tr><td><code>\text{and}</code></td><td>regular text inside math</td><td>x \in A \text{ and } x > 0</td></tr>
+</table>
+
+<!-- ===================== QUICK EXAMPLES ===================== -->
+<h2>Ready-to-Use Examples</h2>
+<div class="note">
+<strong style="color:#e6f1ff;">Divisibility definition:</strong><br/>
+<code>$$a \mid b \iff \exists k \in \mathbb{Z} : b = ka$$</code><br/><br/>
+
+<strong style="color:#e6f1ff;">Modular arithmetic:</strong><br/>
+<code>$$a \equiv b \pmod{n} \iff n \mid (a - b)$$</code><br/><br/>
+
+<strong style="color:#e6f1ff;">Set intersection:</strong><br/>
+<code>$$A \cap B = \{x : x \in A \land x \in B\}$$</code><br/><br/>
+
+<strong style="color:#e6f1ff;">Summation formula:</strong><br/>
+<code>$$\sum_{i=1}^{n} i = \frac{n(n+1)}{2}$$</code><br/><br/>
+
+<strong style="color:#e6f1ff;">Binomial coefficient:</strong><br/>
+<code>$$\binom{n}{k} = \frac{n!}{k!(n-k)!}$$</code><br/><br/>
+
+<strong style="color:#e6f1ff;">Proof by contradiction opener (inline):</strong><br/>
+<code>Assume \(p\) is prime and \(p \mid ab\) but \(p \nmid a\) and \(p \nmid b\).</code>
+</div>

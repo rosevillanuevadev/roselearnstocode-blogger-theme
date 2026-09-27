@@ -1,0 +1,94 @@
+<Variable name="link.color" description="Link Color" type="color" default="#FF6B6B" value="#FF6B6B"/>
+<Variable name="link.hover" description="Hover Color" type="color" default="#FF8E8E" value="#FF8E8E"/>
+<Variable name="post.link.color" description="Post Link Color" type="color" default="#e6f1ff" value="#e6f1ff"/>
+<Variable name="post.link.shadow" description="Post Link Shadow" type="color" default="#1d3557" value="#1d3557"/>
+<Variable name="body.color" description="Text Color" type="color" default="#e6f1ff" value="#e6f1ff"/>
+<Variable name="body.bg" description="Blog Background" type="color" default="#0a192f" value="#0a192f"/>
+<Variable name="quote.color" description="Blockquote Text Color" type="color" default="#e6f1ff" value="#e6f1ff"/>
+<Variable name="quote.border" description="Blockquote Border" type="color" default="#112240" value="#112240"/>
+<Variable name="quote.icon" description="Blockquote Icon Color" type="color" default="#FF8E8E" value="#FF8E8E"/>
+<Variable name="header.bg" description="Section Background" type="color" default="#0a192f" value="#0a192f"/>
+<Variable name="blog.title.font" description="Blog Title Font" type="font" default="300 normal 28px Fira Code, monospace" value="300 normal 28px Fira Code, monospace"/>
+<Variable name="blog.title.font.size" description="Blog Title Font Size (Mobile)" type="length" default="0" min="0" max="100px" value="22px"/>
+<Variable name="blog.title.color" description="Blog Title Color" type="color" default="#e6f1ff" value="#e6f1ff"/>
+<Variable name="blog.description.color" description="Blog Description Color" type="color" default="#e6f1ff" value="#e6f1ff"/>
+<Variable name="nav.bg" description="Navigation Background" type="color" default="#0a192f" value="#0a192f"/>
+<Variable name="nav.border" description="Navigation Border" type="color" default="#112240" value="#112240"/>
+<Variable name="nav.link" description="Navigation Color" type="color" default="#e6f1ff" value="#e6f1ff"/>
+<Variable name="nav.hover" description="Navigation Color Hover" type="color" default="#e6f1ff" value="#e6f1ff"/>
+<Variable name="nav.submenu.border" description="Navigation Submenu Border" type="color" default="#112240" value="#112240"/>
+<Variable name="nav.submenu.link" description="Navigation Submenu Color" type="color" default="#e6f1ff" value="#e6f1ff"/>
+<Variable name="nav.submenu.hover" description="Navigation Submenu Color Hover" type="color" default="#e6f1ff" value="#e6f1ff"/>
+<Variable name="nav.submenu.bg" description="Navigation Submenu Background" type="color" default="#0a192f" value="#0a192f"/>
+<Variable name="nav.submenu.bg.hover" description="Navigation Submenu Background Hover" type="color" default="#112240" value="#112240"/>
+<Variable name="menu.social.link" description="Icons Color" type="color" default="#e6f1ff" value="#e6f1ff"/>
+<Variable name="menu.social.hover" description="Icons Color Hover" type="color" default="#FF8E8E" value="#FF8E8E"/>
+<Variable name="menu.search.bg" description="Search Form Background" type="color" default="#112240" value="#112240"/>
+<Variable name="menu.search.color" description="Search Form Text Color" type="color" default="#e6f1ff" value="#e6f1ff"/>
+<Variable name="entry.title.color" description="Entry Title Color" type="color" default="#e6f1ff" value="#e6f1ff"/>
+<Variable name="entry.title.hover" description="Entry Title Color Hover" type="color" default="#FF8E8E" value="#FF8E8E"/>
+<Variable name="entry.meta.color" description="Entry Meta Color" type="color" default="#e6f1ff" value="#e6f1ff"/>
+<Variable name="entry.meta.hover" description="Entry Meta Color Hover" type="color" default="#FF8E8E" value="#FF8E8E"/>
+<Variable name="entry.footer.bg" description="Entry Footer Background" type="color" default="#112240" value="#112240"/>
+<Variable name="share.color" description="Share Icons Color" type="color" default="#e6f1ff" value="#e6f1ff"/>
+<Variable name="share.hover" description="Share Icons Color Hover" type="color" default="#FF8E8E" value="#FF8E8E"/>
+<Variable name="related.heading.color" description="Related Posts Heading Color" type="color" default="#e6f1ff" value="#e6f1ff"/>
+<Variable name="related.title.color" description="Related Post Title Color" type="color" default="#e6f1ff" value="#e6f1ff"/>
+<Variable name="related.title.hover" description="Related Post Title Color Hover" type="color" default="#FF8E8E" value="#FF8E8E"/>
+<Variable name="related.num.color" description="Number Color" type="color" default="#0a192f" value="#0a192f"/>
+<Variable name="post.nav.border" description="Post Navigation Border" type="color" default="#112240" value="#112240"/>
+<Variable name="post.nav.color" description="Post Navigation Title Color" type="color" default="#e6f1ff" value="#e6f1ff"/>
+<Variable name="post.nav.hover" description="Post Navigation Title Color Hover" type="color" default="#FF8E8E" value="#FF8E8E"/>
+<Variable name="post.nav.arrows" description="Post Navigation Arrows Color" type="color" default="#FF8E8E" value="#FF8E8E"/>
+<Variable name="comment.author.color" description="Comment Author Name Color" type="color" default="#e6f1ff" value="#e6f1ff"/>
+<Variable name="comment.meta.color" description="Comment Date/Reply Color" type="color" default="#e6f1ff" value="#e6f1ff"/>
+<Variable name="jumplink.color" description="Button Color" type="color" default="#e6f1ff" value="#e6f1ff"/>
+<Variable name="jumplink.hover" description="Button Color Hover" type="color" default="#FF8E8E" value="#FF8E8E"/>
+<Variable name="jumplink.border" description="Button Border" type="color" default="#112240" value="#112240"/>
+<Variable name="jumplink.border.hover" description="Button Border Hover" type="color" default="#112240" value="#112240"/>
+<Variable name="pager.color" description="Blog Pager Color" type="color" default="#e6f1ff" value="#e6f1ff"/>
+<Variable name="pager.hover" description="Blog Pager Color Hover" type="color" default="#FF8E8E" value="#FF8E8E"/>
+<Variable name="pager.border" description="Blog Pager Border" type="color" default="#112240" value="#112240"/>
+<Variable name="pager.border.hover" description="Blog Pager Border Hover" type="color" default="#112240" value="#112240"/>
+<Variable name="sidebar.border" description="Sidebar Border" type="color" default="#112240" value="#112240"/>
+<Variable name="sidebar.title.color" description="Widget Titles Color" type="color" default="#e6f1ff" value="#e6f1ff"/>
+<Variable name="profile.title.font" description="Profile Title Font" type="font" default="700 normal 42px Raleway, sans-serif" value="700 normal 42px Raleway, sans-serif"/>
+<Variable name="social.color" description="Social Icons Color" type="color" default="#e6f1ff" value="#e6f1ff"/>
+<Variable name="social.hover" description="Social Icons Color Hover" type="color" default="#e6f1ff" value="#e6f1ff"/>
+<Variable name="social.bg" description="Social Icons Background" type="color" default="#1d3557" value="#1d3557"/>
+<Variable name="social.bg.hover" description="Social Icons Background Hover" type="color" default="#1d3557" value="#1d3557"/>
+<Variable name="input.color" description="Input Color" type="color" default="#e6f1ff" value="#e6f1ff"/>
+<Variable name="input.border" description="Input Border" type="color" default="#112240" value="#112240"/>
+<Variable name="input.bg" description="Input Background" type="color" default="#0a192f" value="#0a192f"/>
+<Variable name="button.color" description="Button Color" type="color" default="#e6f1ff" value="#e6f1ff"/>
+<Variable name="button.color.hover" description="Button Color Hover" type="color" default="#FF8E8E" value="#FF8E8E"/>
+<Variable name="search.border" description="Search Border" type="color" default="#112240" value="#112240"/>
+<Variable name="search.bg" description="Search Background" type="color" default="#0a192f" value="#0a192f"/>
+<Variable name="search.color" description="Search Input Color" type="color" default="#e6f1ff" value="#e6f1ff"/>
+<Variable name="search.icon.color" description="Button Color" type="color" default="#e6f1ff" value="#e6f1ff"/>
+<Variable name="search.icon.hover" description="Button Color Hover" type="color" default="#FF8E8E" value="#FF8E8E"/>
+<Variable name="featured.color" description="Post Title Color" type="color" default="#e6f1ff" value="#e6f1ff"/>
+<Variable name="featured.hover" description="Post Title Color Hover" type="color" default="#FF8E8E" value="#FF8E8E"/>
+<Variable name="featured.heart" description="Heart Color" type="color" default="#1d3557" value="#1d3557"/>
+<Variable name="popular.color" description="Post Title Color" type="color" default="#e6f1ff" value="#e6f1ff"/>
+<Variable name="popular.hover" description="Post Title Color Hover" type="color" default="#FF8E8E" value="#FF8E8E"/>
+<Variable name="popular.num.color" description="Number Color" type="color" default="#0a192f" value="#0a192f"/>
+<Variable name="links.color" description="Labels/LinkList Color" type="color" default="#e6f1ff" value="#e6f1ff"/>
+<Variable name="links.hover" description="Labels/LinkList Color Hover" type="color" default="#FF8E8E" value="#FF8E8E"/>
+<Variable name="ig.title.color" description="Instagram Title Color" type="color" default="#e6f1ff" value="#e6f1ff"/>
+<Variable name="ig.title.hover" description="Instagram User Color Hover" type="color" default="#FF8E8E" value="#FF8E8E"/>
+<Variable name="footer.grid.bg" description="Footer Background" type="color" default="#112240" value="#112240"/>
+<Variable name="footer.color" description="Site Footer Link and Text Color" type="color" default="#e6f1ff" value="#e6f1ff"/>
+<Variable name="footer.hover" description="Site Footer Hover Color" type="color" default="#FF8E8E" value="#FF8E8E"/>
+<Variable name="footer.bg" description="Site Footer Background" type="color" default="#112240" value="#112240"/>
+<Variable name="contact.input.color" description="Input Color" type="color" default="#e6f1ff" value="#e6f1ff"/>
+<Variable name="contact.input.border" description="Input Border" type="color" default="#112240" value="#112240"/>
+<Variable name="contact.input.bg" description="Input Background" type="color" default="#0a192f" value="#0a192f"/>
+<Variable name="contact.button.color" description="Button Color" type="color" default="#e6f1ff" value="#e6f1ff"/>
+<Variable name="contact.button.hover" description="Button Color Hover" type="color" default="#FF8E8E" value="#FF8E8E"/>
+<Variable name="contact.button.bg" description="Button Background" type="color" default="#112240" value="#112240"/>
+<Variable name="contact.button.bg.hover" description="Button Background Hover" type="color" default="#112240" value="#112240"/>
+<Variable name="selection.color" description="Selection Color" type="color" default="#e6f1ff" value="#e6f1ff"/>
+<Variable name="selection.bg" description="Selection Background" type="color" default="#1d3557" value="#1d3557"/>
+<Variable name="scrolltotop.color" description="Scroll to Top Color" type="color" default="#e6f1ff" value="#e6f1ff"/>
+<Variable name="scrolltotop.bg" description="Scroll to Top Background" type="color" default="#1d3557" value="#1d3557"/>

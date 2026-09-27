@@ -1,0 +1,268 @@
+<!-- 
+  DIAGRAM CHEAT SHEET - Blogger Draft Post
+  =========================================
+  HOW TO USE:
+  1. Create a new post in Blogger
+  2. Switch to HTML view
+  3. Paste this entire content
+  4. Save as DRAFT (do not publish)
+
+  GOLDEN RULE: Always use HTML view to insert diagrams.
+  Wrap every diagram in: <div class="mermaid">...</div>
+-->
+
+<style>
+body { font-family: 'Fira Code', monospace; background: #0a192f; color: #a8b2d8; padding: 2rem; max-width: 860px; margin: 0 auto; }
+h2 { color: #FF6B6B; font-size: .85rem; letter-spacing: .15em; text-transform: uppercase; margin: 2.5rem 0 1rem; border-bottom: 1px solid #1d3557; padding-bottom: .5rem; }
+h3 { color: #e6f1ff; font-size: .85rem; margin: 1.5rem 0 .5rem; font-weight: 400; }
+p { font-size: .83rem; color: #8892b0; line-height: 1.7; margin-bottom: 1rem; }
+.note { background: #112240; border-left: 3px solid #FF6B6B; padding: .75rem 1rem; margin: 1rem 0; font-size: .83rem; border-radius: 0 4px 4px 0; color: #a8b2d8; }
+.note strong { color: #e6f1ff; }
+code { background: #112240; color: #FF6B6B; padding: .1em .4em; border-radius: 3px; font-size: .85em; border: 1px solid #1d3557; }
+.snippet { background: #112240; border: 1px solid #1d3557; border-left: 3px solid #FF6B6B; border-radius: 6px; padding: 1.25rem; margin: .75rem 0 1.5rem; font-size: .82rem; color: #a8b2d8; white-space: pre; overflow-x: auto; line-height: 1.6; }
+table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; font-size: .82rem; }
+td { padding: .5rem .75rem; border-bottom: 1px solid #1d3557; vertical-align: top; }
+td:first-child { color: #FF6B6B; white-space: nowrap; width: 35%; }
+</style>
+
+<h1 style="font-family:'Fira Code',monospace;font-weight:300;font-size:1.3rem;color:#e6f1ff;text-transform:lowercase;letter-spacing:.05em;margin-bottom:.5rem;">// diagram cheat sheet</h1>
+<p>Quick reference for adding diagrams to your Blogger posts using Mermaid.js. Always use <strong style="color:#e6f1ff;">HTML view</strong>. Wrap every diagram in <code>&lt;div class="mermaid"&gt;...&lt;/div&gt;</code></p>
+
+<div class="note"><strong>Base template:</strong><br/>
+<code>&lt;div class="mermaid"&gt;<br/>graph TD<br/>    A[Start] --&gt; B[End]<br/>&lt;/div&gt;</code></div>
+
+<!-- ===================== FLOWCHARTS ===================== -->
+<h2>Flowcharts - Algorithms &amp; Logic</h2>
+<p>Use for: algorithm steps, if/else logic, program flow, decision trees</p>
+
+<h3>Direction options</h3>
+<table>
+  <tr><td><code>graph TD</code></td><td>Top → Down (most common)</td></tr>
+  <tr><td><code>graph LR</code></td><td>Left → Right</td></tr>
+  <tr><td><code>graph TB</code></td><td>Top → Bottom (same as TD)</td></tr>
+  <tr><td><code>graph RL</code></td><td>Right → Left</td></tr>
+</table>
+
+<h3>Node shapes</h3>
+<table>
+  <tr><td><code>A[Rectangle]</code></td><td>□ - process / step</td></tr>
+  <tr><td><code>A(Rounded)</code></td><td>⬭ - start / end</td></tr>
+  <tr><td><code>A{Diamond}</code></td><td>◇ - decision / condition</td></tr>
+  <tr><td><code>A((Circle))</code></td><td>○ - connector / state</td></tr>
+  <tr><td><code>A[/Parallelogram/]</code></td><td>⬱ - input / output</td></tr>
+  <tr><td><code>A[(Cylinder)]</code></td><td>⌀ - database</td></tr>
+</table>
+
+<h3>Arrow types</h3>
+<table>
+  <tr><td><code>A --&gt; B</code></td><td>→ plain arrow</td></tr>
+  <tr><td><code>A --&gt;|label| B</code></td><td>→ labeled arrow</td></tr>
+  <tr><td><code>A --- B</code></td><td>- line, no arrow</td></tr>
+  <tr><td><code>A -.&gt; B</code></td><td>⇢ dashed arrow</td></tr>
+  <tr><td><code>A ==&gt; B</code></td><td>⟹ thick arrow</td></tr>
+</table>
+
+<h3>Example - Binary Search algorithm</h3>
+<div class="snippet">&lt;div class="mermaid"&gt;
+graph TD
+    A([Start]) --&gt; B[/Input: array A, target t/]
+    B --&gt; C[low = 0, high = len-1]
+    C --&gt; D{low &lt;= high?}
+    D --&gt;|No| E([Return -1])
+    D --&gt;|Yes| F[mid = floor low+high / 2]
+    F --&gt; G{A at mid == t?}
+    G --&gt;|Yes| H([Return mid])
+    G --&gt;|No| I{A at mid &lt; t?}
+    I --&gt;|Yes| J[low = mid + 1]
+    I --&gt;|No| K[high = mid - 1]
+    J --&gt; D
+    K --&gt; D
+&lt;/div&gt;</div>
+
+<h3>Example - If/Else logic</h3>
+<div class="snippet">&lt;div class="mermaid"&gt;
+graph TD
+    A{n mod 2 == 0?} --&gt;|Yes| B[Even]
+    A --&gt;|No| C[Odd]
+&lt;/div&gt;</div>
+
+<!-- ===================== TREES ===================== -->
+<h2>Trees - Data Structures</h2>
+<p>Use for: binary trees, BSTs, parse trees, expression trees, decision trees</p>
+
+<h3>Example - Binary Search Tree</h3>
+<div class="snippet">&lt;div class="mermaid"&gt;
+graph TD
+    50 --&gt; 30
+    50 --&gt; 70
+    30 --&gt; 20
+    30 --&gt; 40
+    70 --&gt; 60
+    70 --&gt; 80
+&lt;/div&gt;</div>
+
+<h3>Example - Expression Tree for (a+b) * (c-d)</h3>
+<div class="snippet">&lt;div class="mermaid"&gt;
+graph TD
+    M["*"] --&gt; P["+"]
+    M --&gt; S["-"]
+    P --&gt; A["a"]
+    P --&gt; B["b"]
+    S --&gt; C["c"]
+    S --&gt; D["d"]
+&lt;/div&gt;</div>
+
+<!-- ===================== STATE DIAGRAMS ===================== -->
+<h2>State Diagrams - Automata &amp; Theory of Computation</h2>
+<p>Use for: finite automata (DFA/NFA), state machines, transition diagrams</p>
+
+<h3>Example - Simple DFA (accepts strings ending in 1)</h3>
+<div class="snippet">&lt;div class="mermaid"&gt;
+stateDiagram-v2
+    [*] --&gt; q0
+    q0 --&gt; q0 : 0
+    q0 --&gt; q1 : 1
+    q1 --&gt; q0 : 0
+    q1 --&gt; q1 : 1
+    q1 --&gt; [*]
+&lt;/div&gt;</div>
+
+<h3>Example - Traffic light state machine</h3>
+<div class="snippet">&lt;div class="mermaid"&gt;
+stateDiagram-v2
+    [*] --&gt; Red
+    Red --&gt; Green : timer
+    Green --&gt; Yellow : timer
+    Yellow --&gt; Red : timer
+&lt;/div&gt;</div>
+
+<!-- ===================== SEQUENCE DIAGRAMS ===================== -->
+<h2>Sequence Diagrams - Systems &amp; Networking</h2>
+<p>Use for: client-server communication, API calls, protocol flows, function call sequences</p>
+
+<h3>Example - HTTP request/response</h3>
+<div class="snippet">&lt;div class="mermaid"&gt;
+sequenceDiagram
+    participant Client
+    participant Server
+    participant Database
+
+    Client-&gt;&gt;Server: GET /users/1
+    Server-&gt;&gt;Database: SELECT * FROM users WHERE id=1
+    Database--&gt;&gt;Server: {id:1, name:"Rose"}
+    Server--&gt;&gt;Client: 200 OK {user data}
+&lt;/div&gt;</div>
+
+<h3>Arrow types for sequences</h3>
+<table>
+  <tr><td><code>A-&gt;&gt;B: msg</code></td><td>→ solid, no arrowhead</td></tr>
+  <tr><td><code>A-&gt;&gt;B: msg</code></td><td>→ solid with arrowhead (most common)</td></tr>
+  <tr><td><code>A--&gt;&gt;B: msg</code></td><td>⇢ dashed - response/return</td></tr>
+  <tr><td><code>A-&gt;+B: msg</code></td><td>activate B (show as active box)</td></tr>
+  <tr><td><code>A-&gt;-B: msg</code></td><td>deactivate B</td></tr>
+</table>
+
+<!-- ===================== CLASS DIAGRAMS ===================== -->
+<h2>Class Diagrams - OOP &amp; Software Engineering</h2>
+<p>Use for: object-oriented design, inheritance, interfaces, UML</p>
+
+<h3>Example - OOP inheritance</h3>
+<div class="snippet">&lt;div class="mermaid"&gt;
+classDiagram
+    class Animal {
+        +String name
+        +int age
+        +speak() void
+    }
+    class Dog {
+        +String breed
+        +fetch() void
+    }
+    class Cat {
+        +bool indoor
+        +purr() void
+    }
+    Animal &lt;|-- Dog
+    Animal &lt;|-- Cat
+&lt;/div&gt;</div>
+
+<h3>Relationship types</h3>
+<table>
+  <tr><td><code>A &lt;|-- B</code></td><td>inheritance (B extends A)</td></tr>
+  <tr><td><code>A *-- B</code></td><td>composition (B is part of A)</td></tr>
+  <tr><td><code>A o-- B</code></td><td>aggregation</td></tr>
+  <tr><td><code>A --&gt; B</code></td><td>association</td></tr>
+  <tr><td><code>A ..&gt; B</code></td><td>dependency</td></tr>
+  <tr><td><code>A ..|&gt; B</code></td><td>implements interface</td></tr>
+</table>
+
+<!-- ===================== GRAPHS / NETWORKS ===================== -->
+<h2>Graphs - Graph Theory &amp; Networks</h2>
+<p>Use for: undirected/directed graphs, weighted edges, network topology</p>
+
+<h3>Example - Undirected weighted graph</h3>
+<div class="snippet">&lt;div class="mermaid"&gt;
+graph LR
+    A --10--- B
+    A --5--- C
+    B --3--- C
+    B --7--- D
+    C --2--- D
+&lt;/div&gt;</div>
+
+<h3>Example - Directed graph (digraph)</h3>
+<div class="snippet">&lt;div class="mermaid"&gt;
+graph LR
+    A --&gt; B
+    A --&gt; C
+    B --&gt; D
+    C --&gt; D
+    D --&gt; E
+&lt;/div&gt;</div>
+
+<!-- ===================== TRUTH TABLES ===================== -->
+<h2>Truth Tables - Logic (plain HTML table)</h2>
+<p>Mermaid doesn't do tables - use plain HTML for truth tables:</p>
+
+<div class="snippet">&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;p&lt;/th&gt;&lt;th&gt;q&lt;/th&gt;&lt;th&gt;p ∧ q&lt;/th&gt;&lt;th&gt;p ∨ q&lt;/th&gt;&lt;th&gt;¬p&lt;/th&gt;&lt;th&gt;p → q&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;&lt;td&gt;T&lt;/td&gt;&lt;td&gt;T&lt;/td&gt;&lt;td&gt;T&lt;/td&gt;&lt;td&gt;T&lt;/td&gt;&lt;td&gt;F&lt;/td&gt;&lt;td&gt;T&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;T&lt;/td&gt;&lt;td&gt;F&lt;/td&gt;&lt;td&gt;F&lt;/td&gt;&lt;td&gt;T&lt;/td&gt;&lt;td&gt;F&lt;/td&gt;&lt;td&gt;F&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;F&lt;/td&gt;&lt;td&gt;T&lt;/td&gt;&lt;td&gt;F&lt;/td&gt;&lt;td&gt;T&lt;/td&gt;&lt;td&gt;T&lt;/td&gt;&lt;td&gt;T&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;F&lt;/td&gt;&lt;td&gt;F&lt;/td&gt;&lt;td&gt;F&lt;/td&gt;&lt;td&gt;F&lt;/td&gt;&lt;td&gt;T&lt;/td&gt;&lt;td&gt;T&lt;/td&gt;&lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</div>
+
+<!-- ===================== COMBINING ALL THREE ===================== -->
+<h2>Using All Three Together in One Post</h2>
+<p>A typical CS study post might combine all three - this is the pattern to follow:</p>
+<div class="snippet">/* 1. Explain the concept in text */
+&lt;p&gt;A binary search tree satisfies the property that for any node
+with value \(k\), all left subtree values are \(&lt; k\) and
+all right subtree values are \(&gt; k\).&lt;/p&gt;
+
+/* 2. Show the structure as a diagram */
+&lt;div class="mermaid"&gt;
+graph TD
+    8 --&gt; 3
+    8 --&gt; 10
+    3 --&gt; 1
+    3 --&gt; 6
+&lt;/div&gt;
+
+/* 3. Show the search complexity as math */
+$$T(n) = O(\log n) \text{ average case}$$
+
+/* 4. Show the implementation as code */
+&lt;pre class="line-numbers"&gt;&lt;code class="language-python"&gt;
+class Node:
+    def __init__(self, val):
+        self.val = val
+        self.left = None
+        self.right = None
+&lt;/code&gt;&lt;/pre&gt;</div>

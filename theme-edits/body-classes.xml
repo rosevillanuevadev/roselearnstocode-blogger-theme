@@ -1,0 +1,4 @@
+    <b:class cond='data:view.isHomepage' name='home blog remove-sidebar'/>
+    <b:class cond='data:view.isMultipleItems and !data:view.isHomepage' name='archive remove-sidebar'/>
+    <b:class cond='data:view.isLabelSearch' name='label remove-sidebar'/>
+    <b:class cond='data:view.isSearch' name='search remove-sidebar'/>

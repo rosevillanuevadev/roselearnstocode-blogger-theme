@@ -1,0 +1,100 @@
+<!-- 
+  LATEST POSTS SIDEBAR WIDGET - Rose Learns to Code
+  ===================================================
+  Add via Blogger Layout → Add a Gadget → HTML/JavaScript
+  Shows latest 20 post titles pulled from your blog feed.
+  No theme changes needed - works standalone.
+-->
+
+<style>
+#rlc-latest-posts {
+  width: 100%;
+}
+#rlc-latest-posts ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#rlc-latest-posts ul li {
+  border-bottom: 1px solid #1d3557;
+  padding: 0.5rem 0;
+}
+#rlc-latest-posts ul li:last-child {
+  border-bottom: none;
+}
+#rlc-latest-posts ul li a {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: #a8b2d8;
+  text-decoration: none;
+  line-height: 1.4;
+  display: block;
+  transition: color 0.2s;
+}
+#rlc-latest-posts ul li a:hover {
+  color: #FF6B6B;
+}
+#rlc-latest-posts .rlc-loading {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.72rem;
+  color: #8892b0;
+  padding: 0.5rem 0;
+}
+</style>
+
+<div id="rlc-latest-posts">
+  <div class="rlc-loading">// loading posts...</div>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+(function() {
+  var blogUrl = window.location.hostname;
+  var feedUrl = 'https://' + blogUrl + '/feeds/posts/default?max-results=20&orderby=published&alt=json-in-script&callback=rlcRenderPosts';
+
+  window.rlcRenderPosts = function(data) {
+    var container = document.getElementById('rlc-latest-posts');
+    if (!container) return;
+
+    var entries = data.feed.entry;
+    if (!entries || entries.length === 0) {
+      container.innerHTML = '<span style="font-family:Fira Code,monospace;font-size:.72rem;color:#8892b0;">// no posts found</span>';
+      return;
+    }
+
+    var ul = document.createElement('ul');
+
+    for (var i = 0; i < entries.length; i++) {
+      var entry = entries[i];
+      var title = entry.title.$t;
+
+      // Get post URL
+      var url = '';
+      for (var j = 0; j < entry.link.length; j++) {
+        if (entry.link[j].rel === 'alternate') {
+          url = entry.link[j].href;
+          break;
+        }
+      }
+
+      var li = document.createElement('li');
+      var a = document.createElement('a');
+      a.href = url;
+      a.textContent = title;
+      li.appendChild(a);
+      ul.appendChild(li);
+    }
+
+    container.innerHTML = '';
+    container.appendChild(ul);
+  };
+
+  // Inject the feed script
+  var script = document.createElement('script');
+  script.src = feedUrl;
+  script.type = 'text/javascript';
+  document.head.appendChild(script);
+})();
+//]]>
+</script>

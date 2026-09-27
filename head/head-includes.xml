@@ -1,0 +1,177 @@
+
+    <!-- Mermaid.js for diagrams -->
+    <script src='https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js'/>
+    <script type='text/javascript'>
+    //<![CDATA[
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'base',
+      themeVariables: {
+        background:        '#112240',
+        primaryColor:      '#1d3557',
+        primaryTextColor:  '#e6f1ff',
+        primaryBorderColor:'#FF6B6B',
+        lineColor:         '#FF6B6B',
+        secondaryColor:    '#0a192f',
+        tertiaryColor:     '#1d3557',
+        edgeLabelBackground:'#112240',
+        nodeTextColor:     '#e6f1ff',
+        clusterBkg:        '#0a192f',
+        titleColor:        '#FF6B6B',
+        fontFamily:        'Fira Code, monospace',
+        fontSize:          '14px',
+        /* flowchart */
+        nodeBorder:        '#FF6B6B',
+        /* sequence */
+        actorBkg:          '#1d3557',
+        actorBorder:       '#FF6B6B',
+        actorTextColor:    '#e6f1ff',
+        actorLineColor:    '#8892b0',
+        signalColor:       '#a8b2d8',
+        signalTextColor:   '#e6f1ff',
+        labelBoxBkgColor:  '#1d3557',
+        labelBoxBorderColor:'#FF6B6B',
+        labelTextColor:    '#e6f1ff',
+        loopTextColor:     '#a8b2d8',
+        noteBorderColor:   '#FF6B6B',
+        noteBkgColor:      '#0a192f',
+        noteTextColor:     '#a8b2d8',
+        /* state */
+        stateBkg:          '#1d3557',
+        stateBorder:       '#FF6B6B',
+        /* class */
+        classText:         '#e6f1ff',
+        fillType0:         '#1d3557',
+        fillType1:         '#112240',
+        /* git */
+        git0:              '#FF6B6B',
+        git1:              '#a8b2d8',
+      },
+      flowchart: { curve: 'basis', htmlLabels: true },
+      securityLevel: 'loose'
+    });
+    //]]>
+    </script>
+    <style type='text/css'>
+    /* Mermaid diagram container styling */
+    .mermaid {
+      background: #112240 !important;
+      border: 1px solid #1d3557 !important;
+      border-left: 3px solid #FF6B6B !important;
+      border-radius: 6px !important;
+      padding: 1.5rem !important;
+      margin: 1.5rem 0 !important;
+      text-align: center !important;
+      overflow-x: auto !important;
+    }
+    .mermaid svg {
+      max-width: 100% !important;
+    }
+    </style>
+
+    <!-- Prism.js syntax highlighting -->
+    <link href='https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-okaidia.min.css' rel='stylesheet'/>
+    <link href='https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.css' rel='stylesheet'/>
+    <link href='https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min.css' rel='stylesheet'/>
+    <style type='text/css'>
+    /* Prism override - match blog palette */
+    pre[class*=language-] {
+      background: #112240 !important;
+      border: 1px solid #1d3557 !important;
+      border-left: 3px solid #FF6B6B !important;
+      border-radius: 6px !important;
+      font-family: 'Fira Code', monospace !important;
+      font-size: .85rem !important;
+      line-height: 1.6 !important;
+      margin: 1.5rem 0 !important;
+      padding: 1.5rem !important;
+    }
+    code[class*=language-] {
+      font-family: 'Fira Code', monospace !important;
+      font-size: .85rem !important;
+    }
+    /* Inline code */
+    :not(pre) > code {
+      background: #112240 !important;
+      color: #FF6B6B !important;
+      padding: .15em .4em !important;
+      border-radius: 3px !important;
+      font-family: 'Fira Code', monospace !important;
+      font-size: .85em !important;
+      border: 1px solid #1d3557 !important;
+    }
+    /* Language label */
+    .code-toolbar .toolbar { opacity: 1 !important; }
+    .code-toolbar .toolbar a,
+    .code-toolbar .toolbar button,
+    .code-toolbar .toolbar span {
+      background: #1d3557 !important;
+      color: #FF6B6B !important;
+      font-family: 'Fira Code', monospace !important;
+      font-size: .68rem !important;
+      letter-spacing: .05em !important;
+      border-radius: 3px !important;
+      padding: .2em .6em !important;
+      box-shadow: none !important;
+    }
+    .code-toolbar .toolbar a:hover,
+    .code-toolbar .toolbar button:hover {
+      background: #FF6B6B !important;
+      color: #0a192f !important;
+    }
+    /* Line numbers */
+    .line-numbers .line-numbers-rows {
+      border-right: 1px solid #1d3557 !important;
+    }
+    .line-numbers-rows > span::before {
+      color: #1d3557 !important;
+    }
+    </style>
+    <script src='https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js'/>
+    <script src='https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js'/>
+    <script src='https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.js'/>
+    <script src='https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min.js'/>
+    <script src='https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js'/>
+    <script src='https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/show-language/prism-show-language.min.js'/>
+    <script type='text/javascript'>
+    //<![CDATA[
+    // Tell autoloader where to find language components
+    Prism.plugins.autoloader.languages_path = 'https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/';
+    //]]>
+    </script>
+
+    <!-- KaTeX for math rendering -->
+    <link crossorigin='anonymous' href='https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css' rel='stylesheet'/>
+    <script crossorigin='anonymous' src='https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js'/>
+    <script crossorigin='anonymous' src='https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js'/>
+    <script type='text/javascript'>
+    //<![CDATA[
+    document.addEventListener("DOMContentLoaded", function() {
+      // Render WordPress KaTeX blocks (display mode)
+      document.querySelectorAll('.wp-block-katex-display-block pre').forEach(function(el) {
+        katex.render(el.textContent, el.parentNode, {
+          displayMode: true,
+          throwOnError: false
+        });
+      });
+      // Render WordPress KaTeX inline blocks
+      document.querySelectorAll('.wp-block-katex-inline-block').forEach(function(el) {
+        katex.render(el.textContent, el, {
+          displayMode: false,
+          throwOnError: false
+        });
+      });
+      // Also handle $$ and \( \) for any new posts written directly in Blogger
+      if (typeof renderMathInElement !== 'undefined') {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\(", right: "\)", display: false},
+            {left: "\[", right: "\]", display: true}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+    //]]>
+    </script>

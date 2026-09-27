@@ -1,0 +1,377 @@
+
+
+/*-----------------------------------------------
+~ ROSE CUSTOMIZATIONS
+-----------------------------------------------*/
+
+/* Blog title font override - terminal/dev style */
+.blog-title, .blog-title a, .blog-title a:visited,
+h1.blog-title, .Header h1, .Header h1 a {
+  font-family: 'Fira Code', monospace !important;
+  font-weight: 300 !important;
+  font-size: 28px !important;
+  letter-spacing: 0.05em !important;
+  text-transform: lowercase !important;
+}
+
+/* Hide original nav - replaced by custom nav */
+nav.main-menu-wrapper { display: none !important; }
+
+/* Top padding for content area below custom nav */
+.content-wrapper { padding-top: 2rem !important; }
+
+/* Hide related post images - broken when no featured image set */
+.related-post-image { display: none !important; }
+.related-post { padding-top: 0 !important; }
+
+/* Sticky footer - push footer to bottom on short pages */
+#wrapper {
+  min-height: 100vh !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+.content-wrapper {
+  flex: 1 !important;
+}
+
+/* Force dark background everywhere */
+body, .wrapper, .content-outer, .site-header, .main-menu-wrapper,
+.content-inner, .content-wrap, .sidebar, .site-footer,
+.footer-widgets-wrap, .after-footer-wrap {
+  background-color: #0a192f !important;
+}
+
+/* Content area slightly lighter */
+.content, .post.entry, .entry-wrap {
+  background-color: #0a192f !important;
+}
+
+/* Navigation bar */
+.main-menu-wrapper, .main-menu-wrapper ul,
+#main-menu-wrap { background-color: #112240 !important; }
+
+/* Nav layout: links left, social icons right - aligned to content */
+@media screen and (min-width: 971px) {
+  #main-menu-wrap {
+    justify-content: space-between !important;
+    grid-template-columns: 1fr auto !important;
+    max-width: 700px !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin: 0 auto !important;
+  }
+}
+
+/* Border colors */
+.main-menu-wrapper, .sidebar .widget,
+.sidebar .widget:last-child, .post-navigation,
+.entry-footer, .blog-pager { border-color: #1d3557 !important; }
+
+/* Header */
+.site-header { background-color: #0a192f !important; }
+.blog-title a, .blog-title a:visited { color: #e6f1ff !important; }
+.blog-description { color: #8892b0 !important; }
+
+/* Navigation links */
+.main-menu li a, .main-menu li a:visited { color: #a8b2d8 !important; }
+.main-menu li a:hover, .main-menu li.current_page_item > a { color: #FF6B6B !important; }
+
+/* Entry titles */
+.entry-title a, .entry-title a:visited,
+.post-title a, .post-title a:visited { color: #e6f1ff !important; }
+.entry-title a:hover, .post-title a:hover { color: #FF6B6B !important; }
+
+/* Meta */
+.entry-meta, .post-meta, .entry-meta a,
+.post-meta a { color: #8892b0 !important; }
+.entry-meta a:hover, .post-meta a:hover { color: #FF6B6B !important; }
+
+/* Post body text */
+.post-body, .post-body p { color: #a8b2d8 !important; }
+
+/* Links in post */
+.post-body a { color: #FF6B6B !important; box-shadow: inset 0 -1px 0 rgba(255,107,107,0.35) !important; }
+.post-body a:hover { color: #FF8E8E !important; }
+
+/* Footer */
+.footer-widgets-wrap { background-color: #112240 !important; }
+.site-footer { background-color: #0a192f !important; border-top: 1px solid #1d3557 !important; }
+.site-footer, .site-footer a, .copyright, .credit { color: #8892b0 !important; }
+.site-footer a:hover { color: #FF6B6B !important; }
+
+/* Sidebar */
+.sidebar .widget { border-color: #1d3557 !important; background: transparent !important; }
+.sidebar h3.title { color: #FF6B6B !important; border-color: #1d3557 !important; }
+
+/* Search */
+.menu-search input, .search-form input { background: #112240 !important; color: #e6f1ff !important; border-color: #1d3557 !important; }
+
+/* Entry footer (tags/share bar) */
+.entry-footer { background-color: #112240 !important; }
+
+/* Blog pager */
+.blog-pager a { color: #FF6B6B !important; border-color: #1d3557 !important; font-style: normal !important; }
+.blog-pager a:hover { color: #FF8E8E !important; border-color: #FF6B6B !important; }
+.blog-pager * { font-style: normal !important; }
+
+/* Scroll to top */
+.scroll-to-top { background: #1d3557 !important; color: #FF6B6B !important; }
+
+/* Selection */
+::selection { background: #1d3557 !important; color: #e6f1ff !important; }
+
+/* Hide FeaturedPost widget completely */
+.FeaturedPost { display: none !important; }
+
+/* Hide popular post thumbnails in sidebar */
+.popular-post-thumbnail { display: none !important; }
+ul.popular-posts li { padding-left: 0 !important; min-height: 0 !important; }
+ul.popular-posts li .popular-post-title { margin-left: 0 !important; padding-left: 0 !important; }
+ul.popular-posts li::before { display: none !important; }
+
+/* Hide instagram section completely */
+.after-footer-wrap { display: none !important; }
+
+/* Homepage: no sidebar - full width content */
+.remove-sidebar .content-wrap { padding-left: 0 !important; padding-right: 0 !important; max-width: 700px !important; margin: 0 auto !important; }
+.remove-sidebar .content { width: 100% !important; max-width: 700px !important; float: none !important; margin: 0 auto !important; }
+
+/* Kill the 60px gap between entries on homepage and archive pages */
+.remove-sidebar .blog-posts .entry {
+  margin: 0 !important;
+}
+
+/* Override grid-layout for label/archive/search pages */
+/* Force single column list - kill the 3-col grid */
+body.label-page .blog-posts,
+body.archive-page .blog-posts,
+body.search-page .blog-posts {
+  display: block !important;
+  grid-template-columns: unset !important;
+  row-gap: 0 !important;
+  column-gap: 0 !important;
+}
+body.label-page .blog-posts .entry,
+body.archive-page .blog-posts .entry,
+body.search-page .blog-posts .entry {
+  margin: 0 !important;
+}
+/* entry-wrap flex row */
+body.label-page .entry-wrap,
+body.archive-page .entry-wrap,
+body.search-page .entry-wrap {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: flex-end !important;
+  justify-content: space-between !important;
+  padding: 0.5rem 20px 0 !important;
+}
+/* Border on .entry since entry-wrap is a grid context */
+body.label-page .blog-posts .entry,
+body.archive-page .blog-posts .entry,
+body.search-page .blog-posts .entry {
+  border-bottom: 1px solid rgba(255,255,255,0.06) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+body.label-page .entry-text,
+body.archive-page .entry-text,
+body.search-page .entry-text {
+  padding: 0 !important;
+  flex: 1 !important;
+}
+/* entry-header flex row inside */
+body.label-page .entry-header,
+body.archive-page .entry-header,
+body.search-page .entry-header {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: flex-end !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+  margin: 0 0 5px !important;
+  margin-top: 0 !important;
+  padding-top: 0.4rem !important;
+}
+/* Hide stuff we don't want */
+body.label-page .entry-thumbnail,
+body.archive-page .entry-thumbnail,
+body.search-page .entry-thumbnail,
+body.label-page .entry-excerpt,
+body.archive-page .entry-excerpt,
+body.search-page .entry-excerpt,
+body.label-page .entry-footer,
+body.archive-page .entry-footer,
+body.search-page .entry-footer,
+body.label-page .jump-link,
+body.archive-page .jump-link,
+body.search-page .jump-link { display: none !important; }
+/* Date styling */
+body.label-page .entry-header .meta-before-title,
+body.archive-page .entry-header .meta-before-title,
+body.search-page .entry-header .meta-before-title {
+  flex-shrink: 0 !important;
+  order: 2 !important;
+  font-family: 'Fira Code', monospace !important;
+  font-size: 0.72rem !important;
+  font-style: normal !important;
+  color: #8892b0 !important;
+  white-space: nowrap !important;
+}
+body.label-page .entry-header .meta-before-title *,
+body.archive-page .entry-header .meta-before-title *,
+body.search-page .entry-header .meta-before-title * {
+  font-style: normal !important;
+  color: #8892b0 !important;
+}
+body.label-page .entry-header .meta-after-title,
+body.archive-page .entry-header .meta-after-title,
+body.search-page .entry-header .meta-after-title { display: none !important; }
+/* Title styling */
+body.label-page .entry-header .entry-title,
+body.archive-page .entry-header .entry-title,
+body.search-page .entry-header .entry-title {
+  order: 1 !important;
+  flex: 1 !important;
+  margin: 0 !important;
+  font-family: 'Fira Code', monospace !important;
+  font-size: 13px !important;
+  font-weight: 300 !important;
+  text-transform: capitalize !important;
+}
+body.label-page .entry-header .entry-title a,
+body.archive-page .entry-header .entry-title a,
+body.search-page .entry-header .entry-title a {
+  color: #a8b2d8 !important;
+  text-decoration: none !important;
+  font-weight: 300 !important;
+}
+body.label-page .entry-header .entry-title a:hover,
+body.archive-page .entry-header .entry-title a:hover,
+body.search-page .entry-header .entry-title a:hover { color: #FF6B6B !important; }
+
+/* Homepage post list: title left, date right, same line, bottom-aligned */
+.remove-sidebar .entry-wrap {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: flex-end !important;
+  justify-content: space-between !important;
+  padding: 0.5rem 20px 0 !important;
+  border-bottom: 1px solid rgba(255,255,255,0.06) !important;
+}
+.remove-sidebar .entry-text { padding: 0 !important; flex: 1 !important; }
+.remove-sidebar .entry-thumbnail { display: none !important; }
+.remove-sidebar .entry-excerpt { display: none !important; }
+.remove-sidebar .jump-link { display: none !important; }
+.remove-sidebar .entry-footer { display: none !important; }
+
+/* entry-header is the real container: flex row, title left, date right */
+.remove-sidebar .entry-wrap .entry-header {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: flex-end !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+  padding-top: 0.4rem !important;
+  margin: 0 0 5px !important;
+}
+
+/* Title: left, subtle underline */
+.remove-sidebar .entry-header .entry-title,
+.remove-sidebar .entry-header h3.entry-title {
+  margin: 0 !important;
+  line-height: 1 !important;
+  text-align: left !important;
+  order: 1 !important;
+  flex: 1 !important;
+  font-family: 'Fira Code', monospace !important;
+  font-size: 13px !important;
+  font-weight: 300 !important;
+  text-transform: capitalize !important;
+  letter-spacing: 0.03em !important;
+}
+.remove-sidebar .entry-header .entry-title a,
+.remove-sidebar .entry-header h3.entry-title a {
+  color: #a8b2d8 !important;
+  text-decoration: none !important;
+  font-weight: 300 !important;
+  border-bottom: none !important;
+  transition: color 0.2s !important;
+}
+.remove-sidebar .entry-header .entry-title a:hover {
+  color: #FF6B6B !important;
+}
+
+/* Date: right side - .meta-before-title holds the timestamp */
+.remove-sidebar .entry-header .meta-before-title {
+  flex-shrink: 0 !important;
+  order: 2 !important;
+  margin: 0 !important;
+  line-height: 1 !important;
+  font-family: 'Fira Code', monospace !important;
+  font-size: 0.72rem !important;
+  font-style: normal !important;
+  color: #8892b0 !important;
+  white-space: nowrap !important;
+}
+.remove-sidebar .entry-header .meta-before-title *,
+.remove-sidebar .entry-header .meta-before-title a,
+.remove-sidebar .entry-header .meta-before-title span,
+.remove-sidebar .entry-header .meta-before-title time {
+  font-style: normal !important;
+  font-family: 'Fira Code', monospace !important;
+  color: #8892b0 !important;
+}
+/* Hide labels row (meta-after-title) on homepage */
+.remove-sidebar .entry-header .meta-after-title {
+  display: none !important;
+}
+
+/* Submenu dark */
+.main-menu ul.sub-menu { background: #112240 !important; border-color: #1d3557 !important; }
+.main-menu ul.sub-menu li a { color: #a8b2d8 !important; }
+.main-menu ul.sub-menu li a:hover { background: #1d3557 !important; color: #FF6B6B !important; }
+
+/* Input, button, textarea */
+input, textarea, select { background: #112240 !important; color: #e6f1ff !important; border-color: #1d3557 !important; }
+
+/* Comments */
+.comments { border-color: #1d3557 !important; }
+.comment-author { color: #e6f1ff !important; }
+.comment-meta a { color: #8892b0 !important; }
+
+/* Post navigation */
+.post-navigation { border-color: #1d3557 !important; }
+.post-navigation-title { color: #a8b2d8 !important; }
+.post-navigation-title:hover { color: #FF6B6B !important; }
+.post-navigation-arrow { color: #FF6B6B !important; }
+
+/* Related posts */
+.related-posts h4 { color: #e6f1ff !important; }
+.related-post-title { color: #a8b2d8 !important; }
+.related-post-title:hover { color: #FF6B6B !important; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #0a192f; }
+::-webkit-scrollbar-thumb { background: #1d3557; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #FF6B6B; }
+
+/* Override theme's hardcoded 1.5em padding on content-wrap
+   Use same values as #main-menu-wrap so they align perfectly */
+.content-wrap {
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+}
+
+@media (max-width: 768px) {
+
+  .remove-sidebar .entry-header .meta-before-title {
+    font-size: 0.65rem !important;
+  }
+  .remove-sidebar .entry-header .entry-title,
+  .remove-sidebar .entry-header h3.entry-title {
+    font-size: 11px !important;
+  }
+}
+

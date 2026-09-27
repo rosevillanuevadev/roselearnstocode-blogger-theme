@@ -1,0 +1,121 @@
+<!-- 
+  CURRENTLY STUDYING SIDEBAR WIDGET - Rose Learns to Code
+  =========================================================
+  Add via Blogger Layout → Add a Gadget → HTML/JavaScript
+  Title: // currently studying  (or whatever you prefer)
+  
+  Shows the 3 labels most recently used, based on the
+  publish date of the latest post that has each label.
+-->
+
+<style>
+#rlc-studying ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#rlc-studying ul li {
+  border-bottom: 1px solid #1d3557;
+  padding: 0.5rem 0;
+}
+#rlc-studying ul li:last-child {
+  border-bottom: none;
+}
+#rlc-studying ul li a {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: #a8b2d8;
+  text-decoration: none;
+  font-style: normal;
+  line-height: 1.4;
+  display: block;
+  transition: color 0.2s;
+}
+#rlc-studying ul li a:hover {
+  color: #FF6B6B;
+}
+#rlc-studying .rlc-loading {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.72rem;
+  color: #8892b0;
+  padding: 0.5rem 0;
+}
+</style>
+
+<div id="rlc-studying">
+  <div class="rlc-loading">// loading...</div>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+(function() {
+  var NUM_LABELS = 3;
+  var NUM_POSTS  = 20; // scan latest 20 posts to find recently used labels
+  var EXCLUDE    = ['Journal']; // labels to skip
+
+  var blogUrl  = window.location.hostname;
+  var feedUrl  = 'https://' + blogUrl +
+    '/feeds/posts/default?max-results=' + NUM_POSTS +
+    '&orderby=published&alt=json-in-script&callback=rlcStudyingRender';
+
+  window.rlcStudyingRender = function(data) {
+    var container = document.getElementById('rlc-studying');
+    if (!container) return;
+
+    var entries = (data.feed && data.feed.entry) ? data.feed.entry : [];
+    if (entries.length === 0) {
+      container.innerHTML = '<span style="font-family:Fira Code,monospace;font-size:.72rem;color:#8892b0;">// no posts found</span>';
+      return;
+    }
+
+    // Walk posts newest-first; record the first time we see each label
+    var seen   = {};   // label name → true
+    var result = [];   // [{name, url}] in order of first appearance
+
+    for (var i = 0; i < entries.length; i++) {
+      var entry = entries[i];
+      if (!entry.category) continue;
+
+      // Get post URL for the label search page
+      for (var k = 0; k < entry.category.length; k++) {
+        var labelName = entry.category[k].term;
+        if (!seen[labelName] && EXCLUDE.indexOf(labelName) === -1) {
+          seen[labelName] = true;
+          result.push({
+            name: labelName,
+            url:  'https://' + blogUrl + '/search/label/' +
+                  encodeURIComponent(labelName)
+          });
+        }
+        if (result.length >= NUM_LABELS) break;
+      }
+      if (result.length >= NUM_LABELS) break;
+    }
+
+    if (result.length === 0) {
+      container.innerHTML = '<span style="font-family:Fira Code,monospace;font-size:.72rem;color:#8892b0;">// no labels found</span>';
+      return;
+    }
+
+    var ul = document.createElement('ul');
+    for (var j = 0; j < result.length; j++) {
+      var li = document.createElement('li');
+      var a  = document.createElement('a');
+      a.href      = result[j].url;
+      a.textContent = result[j].name;
+      li.appendChild(a);
+      ul.appendChild(li);
+    }
+
+    container.innerHTML = '';
+    container.appendChild(ul);
+  };
+
+  var script  = document.createElement('script');
+  script.src  = feedUrl;
+  script.type = 'text/javascript';
+  document.head.appendChild(script);
+})();
+//]]>
+</script>

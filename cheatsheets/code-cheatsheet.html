@@ -1,0 +1,180 @@
+<!-- 
+  CODE BLOCK CHEAT SHEET - Blogger Draft Post
+  =============================================
+  HOW TO USE:
+  1. Create a new post in Blogger
+  2. Switch to HTML view
+  3. Paste this entire content
+  4. Save as DRAFT (do not publish)
+  5. Keep open in a tab while writing posts
+
+  GOLDEN RULE: Always switch to HTML view to insert code blocks.
+  Never paste code in the visual editor - it will mangle it.
+-->
+
+<style>
+body { font-family: 'Fira Code', monospace; background: #0a192f; color: #a8b2d8; padding: 2rem; max-width: 860px; margin: 0 auto; }
+h2 { color: #FF6B6B; font-size: .85rem; letter-spacing: .15em; text-transform: uppercase; margin: 2.5rem 0 1rem; border-bottom: 1px solid #1d3557; padding-bottom: .5rem; }
+h3 { color: #e6f1ff; font-size: .85rem; margin: 1.5rem 0 .5rem; font-weight: 400; }
+p { font-size: .83rem; color: #8892b0; line-height: 1.7; margin-bottom: 1rem; }
+.note { background: #112240; border-left: 3px solid #FF6B6B; padding: .75rem 1rem; margin: 1rem 0; font-size: .83rem; border-radius: 0 4px 4px 0; color: #a8b2d8; }
+.note strong { color: #e6f1ff; }
+code { background: #112240; color: #FF6B6B; padding: .1em .4em; border-radius: 3px; font-size: .85em; border: 1px solid #1d3557; }
+.snippet { background: #112240; border: 1px solid #1d3557; border-left: 3px solid #FF6B6B; border-radius: 6px; padding: 1.25rem; margin: .75rem 0 1.5rem; font-size: .82rem; color: #a8b2d8; white-space: pre; overflow-x: auto; line-height: 1.6; }
+table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; font-size: .82rem; }
+td { padding: .5rem .75rem; border-bottom: 1px solid #1d3557; vertical-align: top; }
+td:first-child { color: #FF6B6B; white-space: nowrap; width: 30%; }
+td:last-child { color: #8892b0; }
+</style>
+
+<h1 style="font-family:'Fira Code',monospace;font-weight:300;font-size:1.3rem;color:#e6f1ff;text-transform:lowercase;letter-spacing:.05em;margin-bottom:.5rem;">// code block cheat sheet</h1>
+<p>Quick reference for adding syntax-highlighted code to your Blogger posts. Always use <strong style="color:#e6f1ff;">HTML view</strong> when inserting code.</p>
+
+<!-- ===================== BASIC TEMPLATE ===================== -->
+<h2>Basic Template</h2>
+<p>Copy this structure and replace <code>language-xxx</code> with your language and add your code inside:</p>
+<div class="snippet">&lt;pre class="line-numbers"&gt;&lt;code class="language-python"&gt;
+# your code here
+print("hello world")
+&lt;/code&gt;&lt;/pre&gt;</div>
+
+<div class="note"><strong>line-numbers</strong> on the &lt;pre&gt; tag = show line numbers. Remove it if you don't want them.</div>
+
+<!-- ===================== LANGUAGE CLASSES ===================== -->
+<h2>Language Classes</h2>
+<p>Replace <code>language-python</code> with the right one for your post:</p>
+<table>
+  <tr><td><code>language-python</code></td><td>Python - for algorithms, ML, data science</td></tr>
+  <tr><td><code>language-javascript</code></td><td>JavaScript - web, Node.js</td></tr>
+  <tr><td><code>language-typescript</code></td><td>TypeScript</td></tr>
+  <tr><td><code>language-css</code></td><td>CSS</td></tr>
+  <tr><td><code>language-html</code></td><td>HTML / markup</td></tr>
+  <tr><td><code>language-java</code></td><td>Java</td></tr>
+  <tr><td><code>language-c</code></td><td>C</td></tr>
+  <tr><td><code>language-cpp</code></td><td>C++</td></tr>
+  <tr><td><code>language-csharp</code></td><td>C#</td></tr>
+  <tr><td><code>language-r</code></td><td>R - statistics, data analysis</td></tr>
+  <tr><td><code>language-sql</code></td><td>SQL - database queries</td></tr>
+  <tr><td><code>language-bash</code></td><td>Bash / terminal / shell commands</td></tr>
+  <tr><td><code>language-json</code></td><td>JSON - data structures, APIs</td></tr>
+  <tr><td><code>language-yaml</code></td><td>YAML - config files</td></tr>
+  <tr><td><code>language-markdown</code></td><td>Markdown</td></tr>
+  <tr><td><code>language-latex</code></td><td>LaTeX source</td></tr>
+  <tr><td><code>language-pseudocode</code></td><td>Pseudocode (plain text fallback)</td></tr>
+</table>
+
+<!-- ===================== READY TO COPY EXAMPLES ===================== -->
+<h2>Ready-to-Copy Examples</h2>
+
+<h3>Python - function</h3>
+<div class="snippet">&lt;pre class="line-numbers"&gt;&lt;code class="language-python"&gt;
+def factorial(n):
+    if n == 0 or n == 1:
+        return 1
+    return n * factorial(n - 1)
+
+print(factorial(5))  # 120
+&lt;/code&gt;&lt;/pre&gt;</div>
+
+<h3>Python - ML / NumPy style</h3>
+<div class="snippet">&lt;pre class="line-numbers"&gt;&lt;code class="language-python"&gt;
+import numpy as np
+
+X = np.array([[1, 2], [3, 4], [5, 6]])
+mean = np.mean(X, axis=0)
+print(mean)  # [3. 4.]
+&lt;/code&gt;&lt;/pre&gt;</div>
+
+<h3>JavaScript</h3>
+<div class="snippet">&lt;pre class="line-numbers"&gt;&lt;code class="language-javascript"&gt;
+const fibonacci = (n) =&gt; {
+  if (n &lt;= 1) return n;
+  return fibonacci(n - 1) + fibonacci(n - 2);
+};
+
+console.log(fibonacci(10)); // 55
+&lt;/code&gt;&lt;/pre&gt;</div>
+
+<h3>CSS</h3>
+<div class="snippet">&lt;pre class="line-numbers"&gt;&lt;code class="language-css"&gt;
+.container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: #0a192f;
+}
+&lt;/code&gt;&lt;/pre&gt;</div>
+
+<h3>SQL</h3>
+<div class="snippet">&lt;pre class="line-numbers"&gt;&lt;code class="language-sql"&gt;
+SELECT name, COUNT(*) AS total
+FROM students
+WHERE grade &gt;= 85
+GROUP BY name
+ORDER BY total DESC;
+&lt;/code&gt;&lt;/pre&gt;</div>
+
+<h3>Bash / Terminal</h3>
+<div class="snippet">&lt;pre class="line-numbers"&gt;&lt;code class="language-bash"&gt;
+# Install dependencies
+pip install numpy pandas matplotlib scikit-learn
+
+# Run script
+python train_model.py --epochs 50 --lr 0.001
+&lt;/code&gt;&lt;/pre&gt;</div>
+
+<h3>R - Statistics</h3>
+<div class="snippet">&lt;pre class="line-numbers"&gt;&lt;code class="language-r"&gt;
+data &lt;- c(12, 15, 18, 22, 25, 30)
+mean(data)     # 20.33
+sd(data)       # 6.28
+summary(data)
+&lt;/code&gt;&lt;/pre&gt;</div>
+
+<!-- ===================== INLINE CODE ===================== -->
+<h2>Inline Code (inside a sentence)</h2>
+<p>For short code references inside a paragraph - variable names, function names, commands:</p>
+<div class="snippet">&lt;code&gt;variable_name&lt;/code&gt;</div>
+<p>Example: "The &lt;code&gt;len()&lt;/code&gt; function returns the number of items in a list."</p>
+
+<!-- ===================== IMPORTANT CHARACTERS ===================== -->
+<h2>⚠ Characters to Escape in HTML View</h2>
+<p>These characters break HTML if typed directly inside a code block. Use the escaped version:</p>
+<table>
+  <tr><td><code>&amp;lt;</code></td><td>&lt; less than sign - very common in Python, JS comparisons</td></tr>
+  <tr><td><code>&amp;gt;</code></td><td>&gt; greater than sign - arrow functions, comparisons</td></tr>
+  <tr><td><code>&amp;amp;</code></td><td>&amp; ampersand - logical AND in some languages</td></tr>
+  <tr><td><code>&amp;quot;</code></td><td>" double quote - use inside HTML attributes</td></tr>
+</table>
+<div class="note"><strong>Tip:</strong> If your code block looks broken after saving, a stray <code>&lt;</code> or <code>&gt;</code> is usually the culprit. Replace them with <code>&amp;lt;</code> and <code>&amp;gt;</code>.</div>
+
+<!-- ===================== CODE + MATH TOGETHER ===================== -->
+<h2>Combining Code + Math in One Post</h2>
+<p>This is common for CS/AI posts. You can mix both freely - just use the right wrapper for each:</p>
+<div class="snippet">/* Math equation */
+$$f(x) = \frac{1}{1 + e^{-x}}$$
+
+/* Then right after, the implementation */
+&lt;pre class="line-numbers"&gt;&lt;code class="language-python"&gt;
+import numpy as np
+
+def sigmoid(x):
+    return 1 / (1 + np.exp(-x))
+&lt;/code&gt;&lt;/pre&gt;</div>
+
+<!-- ===================== PSEUDOCODE ===================== -->
+<h2>Pseudocode / Algorithm Steps</h2>
+<p>For writing algorithms before implementing them - use plain text with no language class, or <code>language-text</code>:</p>
+<div class="snippet">&lt;pre class="line-numbers"&gt;&lt;code class="language-text"&gt;
+Algorithm: Binary Search
+Input: sorted array A, target value t
+Output: index of t in A, or -1
+
+1. Set low = 0, high = len(A) - 1
+2. While low &lt;= high:
+   a. mid = floor((low + high) / 2)
+   b. If A[mid] == t: return mid
+   c. If A[mid] &lt; t: low = mid + 1
+   d. Else: high = mid - 1
+3. Return -1
+&lt;/code&gt;&lt;/pre&gt;</div>
