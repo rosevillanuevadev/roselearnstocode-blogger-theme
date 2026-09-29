@@ -3,7 +3,7 @@
 **What it is:** A dark, terminal-inspired customization of the Delilah Blogger theme, built for a computer science study journal that publishes math, code, and diagrams. Includes a custom navigation menu with an auto-updating Studies dropdown and five sidebar widgets.
 
 **Live site:** https://roselearnstocode.com (Blogger)
-**Repository:** https://github.com/rose2023va/roselearnstocode-blogger-theme
+**Repository:** https://github.com/rosevillanuevadev/roselearnstocode-blogger-theme
 **Author:** Rose
 
 ---

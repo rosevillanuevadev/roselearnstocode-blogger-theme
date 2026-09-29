@@ -8,7 +8,7 @@
 
 A dark, terminal-inspired redesign of a purchased Blogger theme for a computer science study blog. The build adds math rendering (KaTeX), syntax-highlighted code (Prism.js), and diagrams (Mermaid.js), replaces the theme's navigation with a menu that builds its own Studies dropdown from post labels, restyles every list page into a one-line index, and adds five sidebar widgets. It shipped alongside a migration of the blog from paid WordPress hosting to free Blogger hosting.
 
-**Live:** roselearnstocode.com · **Code:** github.com/rose2023va/roselearnstocode-blogger-theme · **Role:** Solo
+**Live:** roselearnstocode.com · **Code:** github.com/rosevillanuevadev/roselearnstocode-blogger-theme · **Role:** Solo
 
 ## Project Scope (Problem)
 
